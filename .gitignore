@@ -10,6 +10,7 @@ dist
 dist-ssr
 *.local
 tsconfig.tsbuildinfo
+/docs/.vitepress/cache
 
 # Editor directories and files
 .vscode/*
