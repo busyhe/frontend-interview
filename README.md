@@ -1,1 +1,5 @@
 # frontend-interview
+
+https://juejin.cn/post/7229157003427119162
+
+https://vue3js.cn/interview/typescript/interface.html
