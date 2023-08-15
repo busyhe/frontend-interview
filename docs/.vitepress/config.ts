@@ -56,8 +56,7 @@ export default defineConfig({
           { text: '继承', link: '/js/inheritance' },
           { text: 'this', link: '/js/this' },
           { text: 'typeof&instanceof', link: '/js/typeof&instanceof' },
-          { text: '本地储存', link: '/js/localStorage' },
-          { text: '交换a&b', link: '/js/a&b' },
+          { text: '本地储存', link: '/js/localStorage' }
         ]
       },
       {
@@ -125,6 +124,12 @@ export default defineConfig({
         text: '设计模式',
         items: [
           { text: '介绍', link: '/designPattern/index' },
+        ]
+      },
+      {
+        text: '笔试题',
+        items: [
+          { text: '交换a&b', link: '/written/a&b' },
         ]
       }
     ],

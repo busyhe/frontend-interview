@@ -9,6 +9,6 @@ hero:
   actions:
     - theme: brand
       text: Docs
-      link: /vue-v-show&v-if
+      link: /vue/v-show&v-if
 ---
 
