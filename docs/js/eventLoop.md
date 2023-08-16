@@ -16,3 +16,8 @@ js 中任务分为：
 
 - 微任务：Promise.then、process.nextTick、MutationObserver、Object.observe（已废弃、Proxy代替）
 - 宏任务：script、setTimeout、setInterval、setImmediate、I/O、UI rendering
+
+## 区别
+
+- DOM 渲染：微任务在 DOM 渲染前执行，宏任务在 DOM 渲染后执行
+- 执行顺序不同：微任务在主函数执行结束后、当前宏任务结束前执行，宏任务在主函数执行结束后执行

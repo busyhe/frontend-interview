@@ -22,6 +22,7 @@ export default defineConfig({
           { text: 'observable', link: '/vue/observable' },
           { text: 'key', link: '/vue/key' },
           { text: '自定义指令', link: '/vue/customDirectives' },
+          { text: 'vuex', link: '/vue/vuex' },
         ]
       },
       {
@@ -75,6 +76,7 @@ export default defineConfig({
           { text: 'TS 的理解', link: '/ts/introduce' },
           { text: '数据类型', link: '/ts/dataType' },
           { text: '实用程序类型', link: '/ts/utilityTypes' },
+          { text: '接口', link: '/ts/interface' },
           { text: '装饰器', link: '/ts/decorators' },
           { text: '命名空间与模块', link: '/ts/namespace' },
         ]
@@ -86,6 +88,7 @@ export default defineConfig({
           { text: 'Buffer', link: '/node/buffer' },
           { text: 'EventEmitter', link: '/node/eventEmitter' },
           { text: '事件循环', link: '/node/eventLoop' },
+          { text: 'JWT', link: '/node/JWT' },
         ]
       },
       {
@@ -96,6 +99,8 @@ export default defineConfig({
           { text: 'CDN', link: '/http/cdn' },
           { text: '2.0', link: '/http/2' },
           { text: '状态码', link: '/http/status' },
+          { text: '缓存', link: '/http/cache' },
+          { text: 'https', link: '/http/https' },
         ]
       },
       {
@@ -108,10 +113,11 @@ export default defineConfig({
         text: 'Webpack',
         items: [
           { text: '介绍', link: '/webpack/index' },
-          { text: 'Loader', link: '/webpack/loader' },
+          { text: 'Loader&plugin', link: '/webpack/loader&plugin' },
           { text: '构建流程', link: '/webpack/build' },
           { text: '优化前端性能', link: '/webpack/frontend' },
           { text: '构建速度', link: '/webpack/speed' },
+          { text: '热更新', link: '/webpack/hot' },
         ]
       },
       {
