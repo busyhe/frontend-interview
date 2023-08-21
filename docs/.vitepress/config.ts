@@ -18,6 +18,7 @@ export default defineConfig({
           { text: '生命周期', link: '/vue/lifeCycle' },
           { text: '首屏加载', link: '/vue/firstScreen' },
           { text: '双向绑定', link: '/vue/twoWayBinding' },
+          { text: 'watch&computed', link: '/vue/watch&computed' },
           { text: 'nextTick', link: '/vue/nextTick' },
           { text: 'observable', link: '/vue/observable' },
           { text: 'key', link: '/vue/key' },

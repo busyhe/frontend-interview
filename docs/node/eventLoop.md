@@ -37,3 +37,9 @@ JS 在 [浏览器的事件循环机制](https://github.com/febobo/web-interview/
 4. poll queue
 5. check queue
 6. close queue
+
+## 与浏览器区别
+
+## 参考
+
+- https://blog.usword.cn/frontend/js/eventloop.html#%E6%B5%8F%E8%A7%88%E5%99%A8eventloop%E6%80%BB%E7%BB%93
