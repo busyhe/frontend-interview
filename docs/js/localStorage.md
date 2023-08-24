@@ -4,3 +4,11 @@
 - sessionStorage
 - localStorage
 - indexedDB
+
+## cookie
+
+## sessionStorage
+
+## localStorage
+
+## indexedDB

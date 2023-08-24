@@ -58,7 +58,9 @@ export default defineConfig({
           { text: '继承', link: '/js/inheritance' },
           { text: 'this', link: '/js/this' },
           { text: 'typeof&instanceof', link: '/js/typeof&instanceof' },
-          { text: '本地储存', link: '/js/localStorage' }
+          { text: '本地储存', link: '/js/localStorage' },
+          { text: '箭头函数', link: '/js/arrowFunction' },
+          { text: '模块化', link: '/js/modularization' },
         ]
       },
       {
@@ -137,6 +139,8 @@ export default defineConfig({
         text: '笔试题',
         items: [
           { text: '交换a&b', link: '/written/a&b' },
+          { text: "1234=>'4321'", link: '/written/1234' },
+          { text: "两数之和'", link: '/written/sumOfTwoNumbers' },
         ]
       }
     ],
