@@ -11,6 +11,12 @@ export default defineConfig({
 
     sidebar: [
       {
+        text: 'Css',
+        items: [
+          { text: 'opacity、display、visibility', link: '/css/opacityDisplayVisibility' },
+        ]
+      },
+      {
         text: 'Vue',
         items: [
           { text: 'v-show & v-if 的理解', link: '/vue/v-show&v-if' },
@@ -61,6 +67,7 @@ export default defineConfig({
           { text: '本地储存', link: '/js/localStorage' },
           { text: '箭头函数', link: '/js/arrowFunction' },
           { text: '模块化', link: '/js/modularization' },
+          { text: 'set&map', link: '/js/setMap' },
         ]
       },
       {
@@ -77,6 +84,7 @@ export default defineConfig({
         text: 'TS',
         items: [
           { text: 'TS 的理解', link: '/ts/introduce' },
+          { text: '编译过程', link: '/ts/compilation' },
           { text: '数据类型', link: '/ts/dataType' },
           { text: '实用程序类型', link: '/ts/utilityTypes' },
           { text: '接口', link: '/ts/interface' },
