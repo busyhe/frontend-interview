@@ -4,9 +4,6 @@ on:
   push:
     branches: [main]
 
-  # Allows you to run this workflow manually from the Actions tab
-  workflow_dispatch:
-
 # Sets permissions of the GITHUB_TOKEN to allow deployment to GitHub Pages
 permissions:
   contents: read
@@ -25,6 +22,10 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
+        uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
+      - name: Install pnpm
         uses: pnpm/action-setup@v2
         with:
           version: 8
@@ -32,6 +33,7 @@ jobs:
         uses: actions/setup-node@v3
         with:
           node-version: 18
+          cache: pnpm
       - name: Setup Pages
         uses: actions/configure-pages@v3
       - name: Install dependencies
