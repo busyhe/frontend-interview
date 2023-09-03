@@ -27,7 +27,7 @@ jobs:
       - name: Checkout
         uses: pnpm/action-setup@v2
         with:
-          fetch-depth: 0
+          version: 8
       - name: Setup Node
         uses: actions/setup-node@v3
         with:
