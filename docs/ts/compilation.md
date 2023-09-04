@@ -16,4 +16,3 @@
   - 生成 Program
   - 生成 TypeChecker 进行处理
 - **生成器 Emitter：** 通过 Program 创建一个 Emitter，Emitter 将给定的 SourceFile 生成编译后文件（.js，.jsx，.d.ts和.js.map）
-
