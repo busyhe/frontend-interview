@@ -1,33 +1,54 @@
 # http 缓存
 
-资源不是每次都去服务端获取，而是第一次获取之后缓存下来。下次再请求时，直接读取本地缓存，而不再去服务端请求。
+- 降低服务器的请求压力，让服务器更快地响应
+- 减少了冗余的数据传输，节省了网络带宽
+
+## 原理
+
+1. 服务器加载资源，根据请求头Expires和Cache-Control判断是否命中强缓存，如果命中则直接返回200和资源
+2. 如果没有命中强缓存，则根据请求头Last-Modified/If-Modified-Since和ETag/If-None-Match判断是否命中协商缓存，如果命中则返回304和资源
+3. 如果没有命中协商缓存，则直接请求服务器返回200和资源
+
+缓存的文件一般存到内存中，因为内存的读取速度比硬盘快很多
 
 ## 缓存策略
 
-### 强制缓存-客户端缓存
+### 强缓存-客户端缓存
 
-**Cache-Control** (response headers 中) 表示该资源，被再次请求时的缓存情况。
+强缓存通过设置两种 HTTP Header 实现：Expires 和 Cache-Control
 
-- `max-age:31536000` 单位是 s ，该资源被强制缓存 1 年
-- `no-cache` 不使用强制缓存，但不妨碍使用协商缓存（下文会讲）
-- `no-store` 禁用一起缓存，每次都从服务器获取最新的资源
-- `private` 私有缓存（浏览器级缓存）
-- `public` 共享缓存（代理级缓存）
+> 浏览器在加载资源的时候会通过这两个字段判断是否命中强缓存，如果命中则直接从缓存中加载资源，不会向服务器发送请求，反之则发送请求。
 
-### 协商缓存（对比缓存），服务端缓存
+#### Expires
 
-当强制缓存失效，请求会被发送到服务端。此时，服务端也不一定每次都要返回资源，如果客户端资源还有效的话。
+是 HTTP/1 的产物，表示资源过期的时间，描述的是一个绝对时间，由服务器返回。如果小于这个时间则请求缓存数据。
 
-第一，**Last-Modified**（Response Headers）和 **If-Modified-Since**（Request Headers）
+```js
+app.get('/test.js', (req, res) => {
+  let sourcePath = path.resolve(__dirname, '../public/test.js')
+  let result = fs.readFileSync(sourcePath)
+  res.setHeader(
+    'Expires',
+    moment().utc().add(1, 'm').format('ddd, DD MMM YYYY HH:mm:ss') + ' GMT' // 设置1分钟后过期
+  )
+  res.end(result)
+})
+```
 
-- Last-Modified 服务端返回资源的最后修改时间
-- If-Modified-Since 再次请求时带着最后修改时间
-- 服务器根据时间判断资源是否被修改（如未被修改则返回 304，失败则返回新资源和新的缓存规则）
+第一次像服务器请求资源，服务器返回资源的同时，在响应头中添加 Expires 字段，再次请求时，浏览器会先获取本地时间，然后和 Expires 字段进行对比，如果本地时间小于或等于 Expires 的值，则命中强缓存，直接从缓存中加载资源，不会向服务器发送请求。
 
-第二，**Etag**（Response Headers）和 **If-None-Match**（Request Headers）
+缺点：
 
-- Etag 服务端返回的资源唯一标识（类似人的指纹，唯一，生成规则由服务器端决定，结果就是一个字符串）
-- If-None-Match 再次请求时带着这个标识
-- 服务端根据资源和这个标识是否 match （成功则返回 304，失败则返回新资源和新的缓存规则）
+- 服务器时间和浏览器时间可能存在误差，如果修改了本地时间，可能会导致缓存失效。
+- 现在浏览器大部分使用http1.1，基本靠Cache-Control作为主要的依据
 
-如果两者一起使用，则**优先使用 Etag** 规则。因为 Last-Modified 只能精确到秒级别。
+#### Cache-Control
+
+HTTP/1.1 加入的字段，利用 max-age 判断资源是否过期，描述的是一个相对时间，单位是秒。如果小于这个时间则请求缓存数据。
+
+```js
+
+```js
+
+
+### 协商缓存-服务端缓存

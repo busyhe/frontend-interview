@@ -4,11 +4,29 @@ import { defineConfig } from 'vitepress'
 export default defineConfig({
   title: "FrontEnd-Interview",
   description: "frontend interview",
+  head: [
+    ['link', { rel: 'icon', href: '/favicon.ico' }],
+    // Google Analytics
+    [
+      'script',
+      { async: '', src: 'https://www.googletagmanager.com/gtag/js?id=G-81BX4GWHHN' }
+    ],
+    [
+      'script',
+      {},
+      `window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-81BX4GWHHN');`
+    ]
+  ],
   themeConfig: {
+    search: {
+      provider: 'local'
+    },
     nav: [
       { text: 'Home', link: '/' }
     ],
-
     sidebar: [
       {
         text: 'Css',
@@ -68,6 +86,8 @@ export default defineConfig({
           { text: '箭头函数', link: '/js/arrowFunction' },
           { text: '模块化', link: '/js/modularization' },
           { text: 'set&map', link: '/js/setMap' },
+          { text: 'call&apply&bind', link: '/js/callApplyBind' },
+          { text: '攻击', link: '/js/attack' },
         ]
       },
       {
@@ -95,6 +115,7 @@ export default defineConfig({
       {
         text: 'NodeJS',
         items: [
+          { text: '框架对比', link: '/node/framework' },
           { text: 'Stream', link: '/node/stream' },
           { text: 'Buffer', link: '/node/buffer' },
           { text: 'EventEmitter', link: '/node/eventEmitter' },
@@ -141,6 +162,12 @@ export default defineConfig({
         text: '设计模式',
         items: [
           { text: '介绍', link: '/designPattern/index' },
+        ]
+      },
+      {
+        text: 'build',
+        items: [
+          { text: '性能优化', link: '/build/performance' },
         ]
       },
       {

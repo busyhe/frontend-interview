@@ -42,7 +42,7 @@ function deepClone(obj, hash = new WeakMap()) {
     if (hash.get(obj)) return hash.get(obj);
     let cloneObj = new obj.constructor();
     hash.set(obj, cloneObj);
-  
+    
     for (let key in obj) {
         if (obj.hasOwnProperty(key)) {
             cloneObj[key] = deepClone(obj[key], hash);
