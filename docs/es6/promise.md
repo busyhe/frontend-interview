@@ -27,6 +27,10 @@
 
 ```js
 Promise.all = function (promises) {
+  if (!Array.isArray(promises)) {
+    throw new Error("arguments must be an array");
+  }
+
   return new Promise((resolve, reject) => {
     let result = [];
     let count = 0;
@@ -37,6 +41,29 @@ Promise.all = function (promises) {
           if (++count === promises.length) {
             resolve(result);
           }
+        },
+        (err) => {
+          reject(err);
+        }
+      );
+    }
+  });
+};
+```
+
+## Promise.race() 实现
+
+```js
+Promise.race = function (promises) {
+  if (!Array.isArray(promises)) {
+    throw new Error("arguments must be an array");
+  }
+
+  return new Promise((resolve, reject) => {
+    for (let i = 0; i < promises.length; i++) {
+      promises[i].then(
+        (data) => {
+          resolve(data);
         },
         (err) => {
           reject(err);

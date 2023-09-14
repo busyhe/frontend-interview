@@ -99,7 +99,6 @@ function sidebar(): DefaultTheme.SidebarItem[] {
         { text: 'this', link: '/js/this' },
         { text: 'typeof&instanceof', link: '/js/typeof&instanceof' },
         { text: '本地储存', link: '/js/localStorage' },
-        { text: '箭头函数', link: '/js/arrowFunction' },
         { text: '模块化', link: '/js/modularization' },
         { text: 'set&map', link: '/js/setMap' },
         { text: 'call&apply&bind', link: '/js/callApplyBind' },
@@ -110,6 +109,7 @@ function sidebar(): DefaultTheme.SidebarItem[] {
       text: 'ES6',
       items: [
         { text: 'var、let、const', link: '/es6/letConst' },
+        { text: '箭头函数', link: '/es6/arrowFunction' },
         { text: 'Promise', link: '/es6/promise' },
         { text: 'Generator', link: '/es6/generator' },
         { text: 'Proxy', link: '/es6/proxy' },
