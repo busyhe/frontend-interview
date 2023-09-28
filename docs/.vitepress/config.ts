@@ -121,9 +121,8 @@ function sidebar(): DefaultTheme.SidebarItem[] {
       items: [
         { text: 'TS 的理解', link: '/ts/introduce' },
         { text: '编译过程', link: '/ts/compilation' },
-        { text: '数据类型', link: '/ts/dataType' },
+        { text: 'type&interface', link: '/ts/type&interface' },
         { text: '实用程序类型', link: '/ts/utilityTypes' },
-        { text: '接口', link: '/ts/interface' },
         { text: '装饰器', link: '/ts/decorators' },
         { text: '命名空间与模块', link: '/ts/namespace' },
       ]
