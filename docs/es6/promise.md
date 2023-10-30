@@ -23,6 +23,67 @@
 - reject: 返回一个 reject 的 Promise
 - allSettled: 返回一个包含所有结果的数组
 
+## Promise 实现
+
+### 简单实现
+
+```js
+const STATUS = {
+  PENDING: 'PENDING',
+  FULFILLED: 'FULFILLED',
+  REJECTED: 'REJECTED',
+}
+
+class Promise {
+  constructor(executor) {
+    this.status = STATUS.PENDING
+    this.value = undefined // 成功的值
+    this.reason = undefined // 失败原因
+    this.onResolvedCallbacks = [] // 存放成功的回调
+    this.onRejectedCallbacks = [] // 存放失败的回调
+
+    const resolve = val => {
+      if (this.status === STATUS.PENDING) {
+        this.status = STATUS.FULFILLED
+        this.value = val
+        this.onResolvedCallbacks.forEach(fn => fn())
+      }
+    }
+
+    const reject = reason => {
+      if (this.status === STATUS.PENDING) {
+        this.status = STATUS.REJECTED
+        this.reason = reason
+        this.onRejectedCallbacks.forEach(fn => fn())
+      }
+    }
+
+    try {
+      executor(resolve, reject)
+    } catch (e) {
+      console.log(e)
+    }
+  }
+
+  then(onFulfilled, onRejected) {
+    if (this.status === STATUS.FULFILLED) {
+      onFulfilled(this.value)
+    }
+    if (this.status === STATUS.REJECTED) {
+      onRejected(this.reason)
+    }
+    if (this.status === STATUS.PENDING) {
+      this.onResolvedCallbacks.push(() => {
+        onFulfilled(this.value)
+      })
+      this.onRejectedCallbacks.push(() => {
+        onRejected(this.reason)
+      })
+    }
+  }
+}
+```
+
 ## Promise.all() 实现
 
 ```js
