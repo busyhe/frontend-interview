@@ -151,12 +151,6 @@ function sidebar(): DefaultTheme.SidebarItem[] {
       ]
     },
     {
-      text: '算法',
-      items: [
-        { text: '数据结构', link: '/algorithm/dataStructure' },
-      ]
-    },
-    {
       text: 'Webpack',
       items: [
         { text: '介绍', link: '/webpack/index' },
@@ -186,11 +180,13 @@ function sidebar(): DefaultTheme.SidebarItem[] {
       ]
     },
     {
-      text: '笔试题',
+      text: '算法',
       items: [
-        { text: '交换a&b', link: '/written/a&b' },
-        { text: "1234=>'4321'", link: '/written/1234' },
-        { text: "两数之和'", link: '/written/sumOfTwoNumbers' },
+        { text: '数据结构', link: '/algorithm/dataStructure' },
+        { text: '变量互换', link: '/algorithm/reverseString' },
+        { text: '反转字符串', link: '/algorithm/variableSwapping' },
+        { text: '合并排序算法', link: '/algorithm/mergeSort' },
+        { text: "两数之和'", link: '/algorithm/sumOfTwoNumbers' },
       ]
     }
   ]
