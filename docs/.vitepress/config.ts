@@ -187,6 +187,8 @@ function sidebar(): DefaultTheme.SidebarItem[] {
         { text: '反转字符串', link: '/algorithm/variableSwapping' },
         { text: '合并排序算法', link: '/algorithm/mergeSort' },
         { text: "两数之和'", link: '/algorithm/sumOfTwoNumbers' },
+        { text: "发红包算法", link: '/algorithm/redPacket' },
+        { text: "Tree", link: '/algorithm/tree' },
       ]
     }
   ]
