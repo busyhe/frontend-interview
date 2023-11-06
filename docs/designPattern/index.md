@@ -1,66 +1,193 @@
 # 设计模式
 
-- 单例模式
-- 工厂模式
-- 策略模式
-- 代理模式
-- 中介者模式
-- 装饰者模式
+设计模式是解决软件设计中常见问题的经验总结，它们是一些被广泛接受、经过测试的模板，用于解决在特定情况下经常出现的设计问题。以下是一些在前端开发中常见的设计模式：
 
-## 单例模式
+1. **模块模式（Module Pattern）**：模块模式用于创建模块，每个模块都有自己的私有作用域。这样可以避免全局作用域被污染，提高代码的可维护性。在现代 JavaScript 开发中，ES6 的模块系统就是这种模式的体现。
+   ```js
+   // 在 JavaScript 中，可以使用立即执行函数表达式（IIFE）来创建模块。
 
-保证一个类仅有一个实例，并提供一个访问它的全局访问点。实现的方法为先判断实例存在与否，如果存在则直接返回，如果不存在就创建了再返回，这就确保了一个类只有一个实例对象
+   var myModule = (function () {
+        var privateVar = 'Hello World';
 
-如下图的车，只有一辆，一旦借出去则不能再借给别人：
+        function privateMethod() {
+            console.log(privateVar);
+        }
 
- ![](https://static.vue-js.com/ea527aa0-37cd-11ec-8e64-91fdec0f05a1.png)
+        return {
+            publicMethod: privateMethod
+        };
+    })();
 
-## 工厂模式
+    myModule.publicMethod();  // 输出: Hello World
+   ```
 
-工厂模式通常会分成3个角色：
+2. **观察者模式（Observer Pattern）**：观察者模式用于创建一种一对多的依赖关系，当一个对象（被观察者）的状态改变时，所有依赖于它的对象（观察者）都会得到通知。这种模式在事件处理和数据绑定（如 React 和 Vue）中非常常见。
+    ```js
+    // 在 JavaScript 中，可以使用 Event Emitter 来实现观察者模式。
+    class EventEmitter {
+        constructor() {
+            this.events = {};
+        }
 
-- 工厂角色-负责实现创建所有实例的内部逻辑.
-- 抽象产品角色-是所创建的所有对象的父类，负责描述所有实例所共有的公共接口
-- 具体产品角色-是创建目标，所有创建的对象都充当这个角色的某个具体类的实例
+        subscribe(eventName, fn) {
+            if (!this.events[eventName]) {
+                this.events[eventName] = [];
+            }
+            this.events[eventName].push(fn);
+        }
 
- ![](https://static.vue-js.com/fadd1920-37cd-11ec-8e64-91fdec0f05a1.png)
+        emit(eventName, data) {
+            const event = this.events[eventName];
+            if (event) {
+                event.forEach(fn => {
+                    fn.call(null, data);
+                });
+            }
+        }
+    }
 
-## 策略模式
+    const emitter = new EventEmitter();
+    emitter.subscribe('saySomething', data => console.log(data));
+    emitter.emit('saySomething', 'Hello!');  // 输出: Hello!
+    ```
 
-策略模式，就是定义一系列的算法，把他们一个个封装起来，并且使他们可以相互替换
+3. **发布/订阅模式（Publish/Subscribe Pattern）**：发布/订阅模式是观察者模式的一种变体，它引入了一个事件通道，发布者发布事件到这个通道，订阅者从这个通道订阅事件。这种模式可以解耦发布者和订阅者，使得他们可以独立改变。
 
-至少分成两部分：
+4. **单例模式（Singleton Pattern）**：单例模式保证一个类只有一个实例，并提供一个全局访问点。这在需要全局状态管理（如 Redux 中的 store）时非常有用。
 
-- 策略类（可变），策略类封装了具体的算法，并负责具体的计算过程
-- 环境类（不变），接受客户的请求，随后将请求委托给某一个策略类
+    ```js
+    // 在 JavaScript 中，可以使用闭包来实现单例模式。
+    var Singleton = (function () {
+        var instance;
 
-## 代理模式
+        function createInstance() {
+            return {name: 'I am an instance'};
+        }
 
-代理模式：为对象提供一个代用品或占位符，以便控制对它的访问
+        return {
+            getInstance: function () {
+                if (!instance) {
+                    instance = createInstance();
+                }
+                return instance;
+            }
+        };
+    })();
 
-例如实现图片懒加载的功能，先通过一张`loading`图占位，然后通过异步的方式加载图片，等图片加载好了再把完成的图片加载到`img`标签里面
+    var instance1 = Singleton.getInstance();
+    var instance2 = Singleton.getInstance();
+    console.log(instance1 === instance2);  // 输出: true
+    ```
 
-## 中介者模式
+5. **工厂模式（Factory Pattern）**：工厂模式提供了一个创建对象的接口，但让子类决定实例化哪一个类。工厂方法让一个类的实例化延迟到其子类。
 
-中介者模式的定义：通过一个中介者对象，其他所有的相关对象都通过该中介者对象来通信，而不是相互引用，当其中的一个对象发生改变时，只需要通知中介者对象即可
+    ```js
+    function CarMaker(model) {
+        var car;
 
-通过中介者模式可以解除对象与对象之间的紧耦合关系
+        if (model === 'Truck') {
+            car = new Truck();
+        } else if (model === 'Sedan') {
+            car = new Sedan();
+        } else {
+            car = new SUV();
+        }
 
-## 装饰者模式
+        car.model = model;
 
-装饰者模式的定义：在不改变对象自身的基础上，在程序运行期间给对象动态地添加方法
+        return car;
+    }
 
-通常运用在原有方法维持不变，在原有方法上再挂载其他方法来满足现有需求
+    var truck = CarMaker('Truck');
+    var sedan = CarMaker('Sedan');
 
-## 三、总结
+    ```
 
-不断去学习设计模式，会对我们有着极大的帮助，主要如下：
+6. **装饰器模式（Decorator Pattern）**：装饰器模式可以在运行时动态地添加额外的职责到对象上。在 JavaScript 中，装饰器可以用于扩展类、方法和属性。ES7 引入了装饰器语法。
 
-- 从许多优秀的软件系统中总结出的成功的、能够实现可维护性、复用的设计方案，使用这些方案将可以让我们避免做一些重复性的工作
-- 设计模式提供了一套通用的设计词汇和一种通用的形式来方便开发人员之间沟通和交流，使得设计方案更加通俗易懂
+    ```js
+    function withLogging(fn) {
+        return function(...args) {
+            console.log(`Calling function with arguments: ${args}`);
+            return fn(...args);
+        }
+    }
 
-- 大部分设计模式都兼顾了系统的可重用性和可扩展性，这使得我们可以更好地重用一些已有的设计方案、功能模块甚至一个完整的软件系统，避免我们经常做一些重复的设计、编写一些重复的代码
+    function sum(a, b) {
+        return a + b;
+    }
 
-- 合理使用设计模式并对设计模式的使用情况进行文档化，将有助于别人更快地理解系统
+    const sumWithLogging = withLogging(sum);
+    sumWithLogging(3, 4);  // 输出: Calling function with arguments: 3,4
+    ```
 
-- 学习设计模式将有助于初学者更加深入地理解面向对象思想
+7. **策略模式（Strategy Pattern）**：策略模式定义了一系列的算法，并将每一个算法封装起来，使得它们可以互换。这种模式让算法的变化独立于使用算法的客户。
+
+    ```js
+    // 在 JavaScript 中，可以使用对象字面量来实现策略模式。
+    var strategies = {
+        'A': function (input) {
+            return input * 2;
+        },
+        'B': function (input) {
+            return input * 3;
+        }
+    };
+
+    function executeStrategy(strategy, input) {
+        return strategies[strategy](input);
+    }
+
+    executeStrategy('A', 5);  // 输出: 10
+    executeStrategy('B', 5);  // 输出: 15
+    ```
+
+8. **中介者模式（Mediator Pattern）**：中介者模式用于降低多个对象和类之间的通信复杂性。这个模式提供了一个中介类，处理不同类之间的通信。
+
+    ```js
+    // 在 JavaScript 中，可以使用 Event Emitter 来实现中介者模式。
+    
+    class Mediator {
+        constructor() {
+            this.events = {};
+        }
+
+        subscribe(eventName, fn) {
+            if (!this.events[eventName]) {
+                this.events[eventName] = [];
+            }
+            this.events[eventName].push(fn);
+        }
+
+        emit(eventName, data) {
+            const event = this.events[eventName];
+            if (event) {
+                event.forEach(fn => {
+                    fn.call(null, data);
+                });
+            }
+        }
+    }
+    ```
+
+9.  **代理模式（Proxy Pattern）**：代理模式为一个对象提供一个替身或占位符以控制对这个对象的访问。在 JavaScript 中，ES6 引入了 Proxy 类，可以用于创建代理对象。
+
+    ```js
+    const target = {
+        message1: 'hello',
+        message2: 'everyone'
+    };
+
+    const handler = {
+        get: function (target, prop, receiver) {
+            return target[prop].toUpperCase();
+        }
+    };
+
+    const proxy = new Proxy(target, handler);
+
+    proxy.message1;  // 输出: HELLO
+    proxy.message2;  // 输出: EVERYONE
+    ```
+
+以上只是一些常见的设计模式，实际上，设计模式的种类非常多，而且可以根据需要进行组合和变化。正确使用设计模式可以提高代码的可读性、可维护性和可复用性。
