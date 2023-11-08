@@ -188,7 +188,7 @@ function sidebar(): DefaultTheme.SidebarItem[] {
         { text: '合并排序算法', link: '/algorithm/mergeSort' },
         { text: "两数之和'", link: '/algorithm/sumOfTwoNumbers' },
         { text: "发红包算法", link: '/algorithm/redPacket' },
-        { text: "Tree", link: '/algorithm/tree' },
+        { text: "tree节点状态", link: '/algorithm/tree' },
         { text: "字母异位词组合", link: '/algorithm/groupAnagrams' },
         { text: "有效数独", link: '/algorithm/isValidSudoku' },
       ]
