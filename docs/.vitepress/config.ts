@@ -55,6 +55,7 @@ function sidebar(): DefaultTheme.SidebarItem[] {
       items: [
         { text: 'v-show & v-if 的理解', link: '/vue/v-show&v-if' },
         { text: 'vue 实例挂载的过程', link: '/vue/init' },
+        { text: 'vue渲染原理', link: '/vue/render' },
         { text: '生命周期', link: '/vue/lifeCycle' },
         { text: '首屏加载', link: '/vue/firstScreen' },
         { text: '双向绑定', link: '/vue/twoWayBinding' },
@@ -77,7 +78,6 @@ function sidebar(): DefaultTheme.SidebarItem[] {
       items: [
         { text: '生命周期', link: '/react/lifeCycle' },
         { text: 'state&props', link: '/react/state&props' },
-        { text: 'setState', link: '/react/setState' },
         { text: '类组件和函数组件', link: '/react/components' },
         { text: '受控组件&非受控组件', link: '/react/controlledComponents' },
         { text: 'Hooks', link: '/react/hook' },
@@ -148,6 +148,7 @@ function sidebar(): DefaultTheme.SidebarItem[] {
         { text: '状态码', link: '/http/status' },
         { text: '缓存', link: '/http/cache' },
         { text: 'https', link: '/http/https' },
+        { text: 'Websocket', link: '/http/https/websocket' },
       ]
     },
     {
