@@ -186,12 +186,12 @@ function sidebar(): DefaultTheme.SidebarItem[] {
         { text: '数据结构', link: '/algorithm/dataStructure' },
         { text: '变量互换', link: '/algorithm/reverseString' },
         { text: '反转字符串', link: '/algorithm/variableSwapping' },
-        { text: '合并排序算法', link: '/algorithm/mergeSort' },
-        { text: "两数之和'", link: '/algorithm/sumOfTwoNumbers' },
+        { text: "两数之和", link: '/algorithm/sumOfTwoNumbers' },
         { text: "发红包算法", link: '/algorithm/redPacket' },
         { text: "tree节点状态", link: '/algorithm/tree' },
         { text: "字母异位词组合", link: '/algorithm/groupAnagrams' },
         { text: "有效数独", link: '/algorithm/isValidSudoku' },
+        { text: "排序", link: '/algorithm/sort' },
       ]
     }
   ]
