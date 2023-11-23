@@ -47,6 +47,7 @@ function sidebar(): DefaultTheme.SidebarItem[] {
     {
       text: 'Css',
       items: [
+        { text: 'BFC', link: '/css/BFC' },
         { text: 'opacity、display、visibility', link: '/css/opacityDisplayVisibility' },
       ]
     },
@@ -86,6 +87,7 @@ function sidebar(): DefaultTheme.SidebarItem[] {
     {
       text: 'JS',
       items: [
+        { text: 'null&undefined', link: '/js/null&undefined' },
         { text: '深拷贝浅拷贝', link: '/js/deepCopy' },
         { text: '防抖节流', link: '/js/debounce&throttle' },
         { text: '闭包', link: '/js/closure' },
