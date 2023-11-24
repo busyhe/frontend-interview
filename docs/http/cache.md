@@ -50,3 +50,15 @@ HTTP/1.1 加入的字段，利用 max-age 判断资源是否过期，描述的�
 
 
 ### 协商缓存-服务端缓存
+
+协商缓存是利用的是 Last-Modified/If-Modified-Since 和 ETag/If-None-Match 这两对 Header 来管理的。
+
+#### Last-Modified/If-Modified-Since
+
+Last-Modified 表示本地文件最后修改日期，If-Modified-Since 会将 Last-Modified 的值发送给服务器，询问服务器在该日期后资源是否有更新，有更新的话就会将新的资源发送回来。
+
+#### ETag/If-None-Match
+
+ETag 类似于文件指纹，If-None-Match 会将当前 ETag 发送给服务器，询问该资源 ETag 是否变动，有变动的话就将新的资源发送回来。
+
+

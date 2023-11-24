@@ -162,6 +162,7 @@ function sidebar(): DefaultTheme.SidebarItem[] {
         { text: '优化前端性能', link: '/webpack/frontend' },
         { text: '构建速度', link: '/webpack/speed' },
         { text: '热更新', link: '/webpack/hot' },
+        { text: 'vite', link: '/webpack/vite' },
       ]
     },
     {
