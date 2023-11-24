@@ -49,6 +49,7 @@ function sidebar(): DefaultTheme.SidebarItem[] {
       items: [
         { text: 'BFC', link: '/css/BFC' },
         { text: 'opacity、display、visibility', link: '/css/opacityDisplayVisibility' },
+        { text: 'flex', link: '/css/flex' },
       ]
     },
     {
