@@ -98,3 +98,48 @@ console.log(merged); // 输出 [1, 2, 3, 4, 5, 6]
 上述代码使用了两个指针 i 和 j 分别指向两个数组 arr1 和 arr2 的起始位置。通过比较指针所指向的元素，将较小的元素添加到 mergedArray 中，并移动相应的指针。最后，将剩余的元素添加到 mergedArray 中，即可得到合并后的有序数组。
 
 这种合并排序算法的时间复杂度为 O(n)，其中 n 是两个数组的总长度。
+
+### 合并两个有序链表
+
+在前端中，可以使用合并排序算法（Merge Sort）来实现将两个有序链表合并为一个新的有序链表。下面是一个实现的示例代码：
+
+```js
+var merge = function(nums1, m, nums2, n) {
+  nums1.splice( m, nums1.length - m, ...nums2 )
+  nums1.sort( (a, b) => a - b )
+};
+```
+
+我们可以使用双指针方法。这一方法将两个数组看作队列，每次从两个数组头部取出比较小的数字放到结果中
+
+```js
+var merge = function(nums1, m, nums2, n) {
+    let p1 = 0, p2 = 0;
+    const sorted = new Array(m + n).fill(0);
+    var cur;
+    while (p1 < m || p2 < n) {
+        if (p1 === m) {
+            cur = nums2[p2++];
+        } else if (p2 === n) {
+            cur = nums1[p1++];
+        } else if (nums1[p1] < nums2[p2]) {
+            cur = nums1[p1++];
+        } else {
+            cur = nums2[p2++];
+        }
+        sorted[p1 + p2 - 1] = cur;
+    }
+    for (let i = 0; i != m + n; ++i) {
+        nums1[i] = sorted[i];
+    }
+};
+```
+
+复杂度分析
+
+时间复杂度：O(m+n)O(m+n)O(m+n)。
+指针移动单调递增，最多移动 m+nm+nm+n 次，因此时间复杂度为 O(m+n)O(m+n)O(m+n)。
+
+空间复杂度：O(m+n)O(m+n)O(m+n)。
+需要建立长度为 m+nm+nm+n 的中间数组 sorted\textit{sorted}sorted。
+

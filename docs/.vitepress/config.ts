@@ -55,6 +55,7 @@ function sidebar(): DefaultTheme.SidebarItem[] {
     {
       text: 'Vue',
       items: [
+        { text: '组件通信', link: '/vue/communication' },
         { text: 'v-show & v-if 的理解', link: '/vue/v-show&v-if' },
         { text: 'vue 实例挂载的过程', link: '/vue/init' },
         { text: 'vue渲染原理', link: '/vue/render' },
@@ -67,11 +68,13 @@ function sidebar(): DefaultTheme.SidebarItem[] {
         { text: 'key', link: '/vue/key' },
         { text: '自定义指令', link: '/vue/customDirectives' },
         { text: 'vuex', link: '/vue/vuex' },
+        { text: 'diff', link: '/vue/diff' },
       ]
     },
     {
       text: 'Vue3',
       items: [
+        { text: 'vue2', link: '/vue3/vue2' },
         { text: 'Proxy', link: '/vue3/proxy' },
       ]
     },
@@ -90,6 +93,7 @@ function sidebar(): DefaultTheme.SidebarItem[] {
       items: [
         { text: 'null&undefined', link: '/js/null&undefined' },
         { text: '深拷贝浅拷贝', link: '/js/deepCopy' },
+        { text: 'EventEmitter', link: '/js/EventEmitter' },
         { text: '防抖节流', link: '/js/debounce&throttle' },
         { text: '闭包', link: '/js/closure' },
         { text: '严格模式', link: '/js/strictMode' },
@@ -139,6 +143,7 @@ function sidebar(): DefaultTheme.SidebarItem[] {
         { text: 'EventEmitter', link: '/node/eventEmitter' },
         { text: '事件循环', link: '/node/eventLoop' },
         { text: 'JWT', link: '/node/JWT' },
+        { text: 'koa', link: '/node/koa' },
       ]
     },
     {
@@ -151,7 +156,7 @@ function sidebar(): DefaultTheme.SidebarItem[] {
         { text: '状态码', link: '/http/status' },
         { text: '缓存', link: '/http/cache' },
         { text: 'https', link: '/http/https' },
-        { text: 'Websocket', link: '/http/https/websocket' },
+        { text: 'Websocket', link: '/http/websocket' },
       ]
     },
     {
@@ -196,6 +201,9 @@ function sidebar(): DefaultTheme.SidebarItem[] {
         { text: "字母异位词组合", link: '/algorithm/groupAnagrams' },
         { text: "有效数独", link: '/algorithm/isValidSudoku' },
         { text: "排序", link: '/algorithm/sort' },
+        { text: "移除元素", link: '/algorithm/removeElement' },
+        { text: "删除有序数组中的重复项", link: '/algorithm/removeDuplicatesSortedArray' },
+        { text: "删除有序数组中的重复项2", link: '/algorithm/removeDuplicatesSortedArray2' },
       ]
     }
   ]
