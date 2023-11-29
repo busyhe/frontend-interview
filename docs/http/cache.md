@@ -46,9 +46,6 @@ app.get('/test.js', (req, res) => {
 
 HTTP/1.1 加入的字段，利用 max-age 判断资源是否过期，描述的是一个相对时间，单位是秒。如果小于这个时间则请求缓存数据。
 
-```js
-
-
 ### 协商缓存-服务端缓存
 
 协商缓存是利用的是 Last-Modified/If-Modified-Since 和 ETag/If-None-Match 这两对 Header 来管理的。
