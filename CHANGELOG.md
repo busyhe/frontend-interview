@@ -1,3 +1,11 @@
+## [1.1.1](https://github.com/busyhe/frontend-interview/compare/v1.1.0...v1.1.1) (2023-11-29)
+
+
+### Bug Fixes
+
+* **github actions:** add github release ([b66056c](https://github.com/busyhe/frontend-interview/commit/b66056c9d071ac65c82de1e6ec30452962104f97))
+* **github releases:** json code error ([44ba9f2](https://github.com/busyhe/frontend-interview/commit/44ba9f2efd7e9c67224a420992204ddf7691155c))
+
 # [1.1.0](https://github.com/busyhe/frontend-interview/compare/v1.0.0...v1.1.0) (2023-11-29)
 
 
