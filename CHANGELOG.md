@@ -1,3 +1,10 @@
+# [1.1.0](https://github.com/busyhe/frontend-interview/compare/v1.0.0...v1.1.0) (2023-11-29)
+
+
+### Features
+
+* **pages:** add keepalive page ([eb3bbb1](https://github.com/busyhe/frontend-interview/commit/eb3bbb1d5ace18b794f490d1bca5373c35dac8d8))
+
 # 1.0.0 (2023-11-29)
 
 
