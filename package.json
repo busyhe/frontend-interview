@@ -14,10 +14,13 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "@semantic-release/changelog": "^6.0.3",
+    "@semantic-release/git": "^10.0.1",
     "commitizen": "^4.3.0",
     "cz-conventional-changelog": "^3.3.0",
     "husky": "^8.0.3",
     "is-ci": "^3.0.1",
+    "semantic-release": "^22.0.8",
     "vitepress": "1.0.0-beta.7"
   },
   "config": {
