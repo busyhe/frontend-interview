@@ -64,6 +64,7 @@ function sidebar(): DefaultTheme.SidebarItem[] {
         { text: '双向绑定', link: '/vue/twoWayBinding' },
         { text: 'watch&computed', link: '/vue/watch&computed' },
         { text: 'nextTick', link: '/vue/nextTick' },
+        { text: 'KeepAlive', link: '/vue/keepalive' },
         { text: 'observable', link: '/vue/observable' },
         { text: 'key', link: '/vue/key' },
         { text: '自定义指令', link: '/vue/customDirectives' },
