@@ -50,6 +50,7 @@ function sidebar(): DefaultTheme.SidebarItem[] {
         { text: 'BFC', link: '/css/BFC' },
         { text: 'opacity、display、visibility', link: '/css/opacityDisplayVisibility' },
         { text: 'flex', link: '/css/flex' },
+        { text: '重绘回流', link: '/css/redrawReflow' },
       ]
     },
     {
@@ -153,9 +154,11 @@ function sidebar(): DefaultTheme.SidebarItem[] {
         { text: '地址栏', link: '/http/address' },
         { text: 'DNS', link: '/http/dns' },
         { text: 'CDN', link: '/http/cdn' },
+        { text: 'TCP&UDP', link: '/http/TCP&UDP' },
         { text: '2.0', link: '/http/2' },
         { text: '状态码', link: '/http/status' },
         { text: '缓存', link: '/http/cache' },
+        { text: '跨域', link: '/http/cross' },
         { text: 'https', link: '/http/https' },
         { text: 'Websocket', link: '/http/websocket' },
       ]
