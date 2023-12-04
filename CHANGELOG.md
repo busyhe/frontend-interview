@@ -1,3 +1,10 @@
+# [1.2.0](https://github.com/busyhe/frontend-interview/compare/v1.1.1...v1.2.0) (2023-12-04)
+
+
+### Features
+
+* update some file ([9c696cd](https://github.com/busyhe/frontend-interview/commit/9c696cde782bdfcb12c7802c3e71e1dbf7564c0c))
+
 ## [1.1.1](https://github.com/busyhe/frontend-interview/compare/v1.1.0...v1.1.1) (2023-11-29)
 
 
