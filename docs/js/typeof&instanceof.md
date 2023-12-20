@@ -1,5 +1,12 @@
 # typeof 与 instanceof 区别
 
+## js 数据类型
+
+js 中的数据类型分为基础数据类型和引用数据类型
+
+基础数据类型包括：number、string、boolean、undefined、symbol、null
+引用数据类型包括：object
+
 ## typeof
 
 ```js
