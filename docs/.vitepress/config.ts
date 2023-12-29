@@ -71,6 +71,7 @@ function sidebar(): DefaultTheme.SidebarItem[] {
         { text: '自定义指令', link: '/vue/customDirectives' },
         { text: 'vuex', link: '/vue/vuex' },
         { text: 'diff', link: '/vue/diff' },
+        { text: 'mixin', link: '/vue/mixin' },
       ]
     },
     {
