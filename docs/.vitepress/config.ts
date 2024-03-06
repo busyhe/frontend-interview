@@ -48,7 +48,6 @@ function sidebar(): DefaultTheme.SidebarItem[] {
       text: 'Css',
       items: [
         { text: 'BFC', link: '/css/BFC' },
-        { text: 'opacity、display、visibility', link: '/css/opacityDisplayVisibility' },
         { text: 'flex', link: '/css/flex' },
         { text: '重绘回流', link: '/css/redrawReflow' },
       ]
@@ -59,7 +58,6 @@ function sidebar(): DefaultTheme.SidebarItem[] {
         { text: '组件通信', link: '/vue/communication' },
         { text: 'v-show & v-if 的理解', link: '/vue/v-show&v-if' },
         { text: 'vue 实例挂载的过程', link: '/vue/init' },
-        { text: 'vue渲染原理', link: '/vue/render' },
         { text: '生命周期', link: '/vue/lifeCycle' },
         { text: '首屏加载', link: '/vue/firstScreen' },
         { text: '双向绑定', link: '/vue/twoWayBinding' },
@@ -113,6 +111,8 @@ function sidebar(): DefaultTheme.SidebarItem[] {
         { text: 'set&map', link: '/js/setMap' },
         { text: 'call&apply&bind', link: '/js/callApplyBind' },
         { text: '攻击', link: '/js/attack' },
+        { text: '设计模式', link: '/js/designPattern' },
+        { text: 'ajax', link: '/js/ajax' },
       ]
     },
     {
@@ -189,14 +189,9 @@ function sidebar(): DefaultTheme.SidebarItem[] {
       ]
     },
     {
-      text: 'build',
+      text: '数据结构和算法',
       items: [
-        { text: '性能优化', link: '/build/performance' },
-      ]
-    },
-    {
-      text: '算法',
-      items: [
+        { text: '算法复杂度', link: '/algorithm/complexity' },
         { text: '数据结构', link: '/algorithm/dataStructure' },
         { text: '变量互换', link: '/algorithm/reverseString' },
         { text: '反转字符串', link: '/algorithm/variableSwapping' },

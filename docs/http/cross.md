@@ -55,3 +55,14 @@ res.send(response);
 在上述例子中，客户端创建了一个`<script>`标签，指定了跨域资源的URL，并在URL中添加了回调函数的参数名`callback=handleResponse`。服务器端接收到请求后，根据`callback`参数名将数据包装在回调函数`handleResponse`中返回。客户端接收到响应后，将返回的内容作为脚本执行，从而调用了全局的`handleResponse`回调函数，并将数据作为参数传递给回调函数。
 
 需要注意的是，JSONP只支持GET请求，因为`<script>`标签只能发起GET请求。此外，JSONP存在一定的安全风险，因为服务器返回的脚本会在客户端执行，所以需要确保从服务器返回的脚本是可信的。
+
+## 跨域为何发送 OPTIONS 请求
+
+在进行跨域请求时，浏览器会先发送一个 OPTIONS 请求，然后根据服务器返回的响应决定是否发送真正的请求。这是因为跨域请求可能会引发一些安全风险，因此浏览器会先发送 OPTIONS 请求来询问服务器是否允许跨域请求。
+
+OPTIONS 请求是一种预检请求（Preflight Request），用于检测服务器是否允许跨域请求。预检请求的目的是为了确保服务器支持跨域请求，以及了解服务器支持的请求方法和头信息。
+
+预检请求的过程如下：
+
+1. 浏览器发送 OPTIONS 请求，询问服务器是否允许跨域请求。
+2. 服务器接收到 OPTIONS 请求后，根据请求中的`Origin`、`Access-Control-Request-Method`和`Access-Control-Request-Headers`等头信息，判断是否允许跨域请求。
