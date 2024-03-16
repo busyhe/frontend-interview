@@ -19,3 +19,75 @@ Hooks让我们的函数组件拥有了类组件的特性，例如组件内的状
 - useImperativeHandle：用于在函数组件中自定义暴露给父组件的实例值。
 - useLayoutEffect：类似于 useEffect，但是会在所有的 DOM 变更之后同步调用 effect。
 - useDebugValue：用于在开发者工具中显示自定义 Hook 的标签。
+
+### useState
+
+```jsx
+import React, { useState } from 'react';
+
+function Example() {
+  // 声明一个叫 "count" 的 state 变量
+  const [count, setCount] = useState(0);
+
+  return (
+    <div>
+      <p>You clicked {count} times</p>
+      <button onClick={() => setCount(count + 1)}>
+        Click me
+      </button>
+    </div>
+  );
+}
+```
+
+react函数组件中使用useState改变值后立刻获取最新值，我们可以使用useEffect来监听值的变化，或者
+
+```
+import React, { useState } from 'react';
+
+function MyComponent() {
+  const [count, setCount] = useState(0);
+
+  const handleClick = () => {
+    setCount(prevCount => {
+      console.log(prevCount); // 这里打印的 prevCount 是旧的值
+      const newCount = prevCount + 1;
+      console.log(newCount); // 这里打印的 newCount 是新的值
+      return newCount;
+    });
+  };
+
+  return (
+    <button onClick={handleClick}>
+      Click me: {count}
+    </button>
+  );
+}
+
+export default MyComponent;
+```
+
+### useEffect
+
+```jsx
+import React, { useState, useEffect } from 'react';
+
+function Example() {
+  const [count, setCount] = useState(0);
+
+  // 类似于 componentDidMount 和 componentDidUpdate:
+  useEffect(() => {
+    // 使用浏览器的 API 更新页面标题
+    document.title = `You clicked ${count} times`;
+  });
+
+  return (
+    <div>
+      <p>You clicked {count} times</p>
+      <button onClick={() => setCount(count + 1)}>
+        Click me
+      </button>
+    </div>
+  );
+}
+```

@@ -111,7 +111,6 @@ function sidebar(): DefaultTheme.SidebarItem[] {
         { text: 'set&map', link: '/js/setMap' },
         { text: 'call&apply&bind', link: '/js/callApplyBind' },
         { text: '攻击', link: '/js/attack' },
-        { text: '设计模式', link: '/js/designPattern' },
         { text: 'ajax', link: '/js/ajax' },
       ]
     },
@@ -184,12 +183,14 @@ function sidebar(): DefaultTheme.SidebarItem[] {
     },
     {
       text: '设计模式',
+      collapsed: true,
       items: [
         { text: '介绍', link: '/designPattern/index' },
       ]
     },
     {
       text: '数据结构和算法',
+      collapsed: true,
       items: [
         { text: '算法复杂度', link: '/algorithm/complexity' },
         { text: '数据结构', link: '/algorithm/dataStructure' },
