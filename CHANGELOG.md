@@ -1,3 +1,10 @@
+# [1.7.0](https://github.com/busyhe/frontend-interview/compare/v1.6.0...v1.7.0) (2024-03-18)
+
+
+### Features
+
+* update ([5a5999b](https://github.com/busyhe/frontend-interview/commit/5a5999bf871fab81f5ce6b636c22b88f6e48ed6e))
+
 # [1.6.0](https://github.com/busyhe/frontend-interview/compare/v1.5.0...v1.6.0) (2024-03-16)
 
 
