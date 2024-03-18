@@ -105,6 +105,7 @@ function sidebar(): DefaultTheme.SidebarItem[] {
         { text: '原型', link: '/js/prototype' },
         { text: '继承', link: '/js/inheritance' },
         { text: 'this', link: '/js/this' },
+        { text: 'new', link: '/js/new' },
         { text: 'typeof&instanceof', link: '/js/typeof&instanceof' },
         { text: '本地储存', link: '/js/localStorage' },
         { text: '模块化', link: '/js/modularization' },
