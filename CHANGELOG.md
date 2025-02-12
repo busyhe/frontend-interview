@@ -1,3 +1,10 @@
+# [1.8.0](https://github.com/busyhe/frontend-interview/compare/v1.7.0...v1.8.0) (2025-02-12)
+
+
+### Features
+
+* updat npm packages version ([6d95909](https://github.com/busyhe/frontend-interview/commit/6d9590978564a2969eb7c4add04f3c1fc22ef53e))
+
 # [1.7.0](https://github.com/busyhe/frontend-interview/compare/v1.6.0...v1.7.0) (2024-03-18)
 
 
