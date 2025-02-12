@@ -2,6 +2,7 @@
   "name": "frontend-interview",
   "version": "1.7.0",
   "description": "",
+  "type": "module",
   "main": "index.js",
   "scripts": {
     "docs:dev": "vitepress dev docs",
