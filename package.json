@@ -21,7 +21,7 @@
     "husky": "^8.0.3",
     "is-ci": "^3.0.1",
     "semantic-release": "^22.0.8",
-    "vitepress": "1.0.0-beta.7"
+    "vitepress": "1.6.3"
   },
   "config": {
     "commitizen": {
