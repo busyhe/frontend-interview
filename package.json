@@ -28,5 +28,6 @@
     "commitizen": {
       "path": "cz-conventional-changelog"
     }
-  }
+  },
+  "packageManager": "pnpm@10.6.2"
 }
