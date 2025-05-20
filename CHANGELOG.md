@@ -1,3 +1,10 @@
+# [1.9.0](https://github.com/busyhe/frontend-interview/compare/v1.8.0...v1.9.0) (2025-05-20)
+
+
+### Features
+
+* add Typescript ([e7a9e12](https://github.com/busyhe/frontend-interview/commit/e7a9e12c3da78c41bdd7b9f38c2d11b934d448eb))
+
 # [1.8.0](https://github.com/busyhe/frontend-interview/compare/v1.7.0...v1.8.0) (2025-02-12)
 
 
