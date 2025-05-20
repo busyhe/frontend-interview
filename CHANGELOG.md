@@ -1,3 +1,11 @@
+## [1.9.1](https://github.com/busyhe/frontend-interview/compare/v1.9.0...v1.9.1) (2025-05-20)
+
+
+### Bug Fixes
+
+* remove deadLinks ([78df49d](https://github.com/busyhe/frontend-interview/commit/78df49deb0144d7058a6f10762225cc3f795ff20))
+* window is not defined ([eae8509](https://github.com/busyhe/frontend-interview/commit/eae850912a2c4f1e78cb6f7f443900199f25ef9b))
+
 # [1.9.0](https://github.com/busyhe/frontend-interview/compare/v1.8.0...v1.9.0) (2025-05-20)
 
 
